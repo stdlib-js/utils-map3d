@@ -34,14 +34,30 @@ limitations under the License.
 
 <!-- Package usage documentation. -->
 
+<section class="installation">
 
+## Installation
+
+```bash
+npm install @stdlib/utils-map3d
+```
+
+Alternatively,
+
+-   To load the package in a website via a `script` tag without installation and bundlers, use the [ES Module][es-module] available on the [`esm` branch][esm-url].
+-   If you are using Deno, visit the [`deno` branch][deno-url].
+-   For use in Observable, or in browser/node environments, use the [Universal Module Definition (UMD)][umd] build available on the [`umd` branch][umd-url].
+
+The [branches.md][branches-url] file summarizes the available branches and displays a diagram illustrating their relationships.
+
+</section>
 
 <section class="usage">
 
 ## Usage
 
 ```javascript
-import map3d from 'https://cdn.jsdelivr.net/gh/stdlib-js/utils-map3d@esm/index.mjs';
+var map3d = require( '@stdlib/utils-map3d' );
 ```
 
 #### map3d( arr, fcn\[, thisArg] )
@@ -49,8 +65,8 @@ import map3d from 'https://cdn.jsdelivr.net/gh/stdlib-js/utils-map3d@esm/index.m
 Applies a function to each nested element in a three-dimensional nested array and assigns the result to a nested element in a new three-dimensional nested array.
 
 ```javascript
-import naryFunction from 'https://cdn.jsdelivr.net/gh/stdlib-js/utils-nary-function@esm/index.mjs';
-import abs from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-abs@esm/index.mjs';
+var naryFunction = require( '@stdlib/utils-nary-function' );
+var abs = require( '@stdlib/math-base-special-abs' );
 
 var arr = [
     [ [ -1, -2, -3 ] ],
@@ -74,7 +90,7 @@ To set the `this` context when invoking the input function, provide a `thisArg`.
 <!-- eslint-disable no-invalid-this -->
 
 ```javascript
-import abs from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-abs@esm/index.mjs';
+var abs = require( '@stdlib/math-base-special-abs' );
 
 function fcn( v ) {
     this.count += 1;
@@ -117,17 +133,12 @@ var cnt = ctx.count;
 
 <!-- eslint no-undef: "error" -->
 
-```html
-<!DOCTYPE html>
-<html lang="en">
-<body>
-<script type="module">
-
-import filledarrayBy from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-filled-by@esm/index.mjs';
-var discreteUniform = require( 'https://cdn.jsdelivr.net/gh/stdlib-js/random-base-discrete-uniform' ).factory;
-import naryFunction from 'https://cdn.jsdelivr.net/gh/stdlib-js/utils-nary-function@esm/index.mjs';
-import abs2 from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-abs2@esm/index.mjs';
-import map3d from 'https://cdn.jsdelivr.net/gh/stdlib-js/utils-map3d@esm/index.mjs';
+```javascript
+var filledarrayBy = require( '@stdlib/array-filled-by' );
+var discreteUniform = require( '@stdlib/random-base-discrete-uniform' ).factory;
+var naryFunction = require( '@stdlib/utils-nary-function' );
+var abs2 = require( '@stdlib/math-base-special-abs2' );
+var map3d = require( '@stdlib/utils-map3d' );
 
 function nestedFill( i ) {
     var rand = discreteUniform( -10*(i+1), 10*(i+1) );
@@ -152,10 +163,6 @@ console.log( x );
 
 console.log( 'y:' );
 console.log( y );
-
-</script>
-</body>
-</html>
 ```
 
 </section>
@@ -187,7 +194,7 @@ console.log( y );
 
 ## Notice
 
-This package is part of [stdlib][stdlib], a standard library with an emphasis on numerical and scientific computing. The library provides a collection of robust, high performance libraries for mathematics, statistics, streams, utilities, and more.
+This package is part of [stdlib][stdlib], a standard library for JavaScript and Node.js, with an emphasis on numerical and scientific computing. The library provides a collection of robust, high performance libraries for mathematics, statistics, streams, utilities, and more.
 
 For more information on the project, filing bug reports and feature requests, and guidance on how to develop [stdlib][stdlib], see the main project [repository][stdlib].
 
